@@ -23,7 +23,7 @@ Postman API
 
 # Frontend
 React 
-Vue CSS Framework
+Chakra CSS
 
 ## Setup
 # Backend
