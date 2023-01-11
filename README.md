@@ -14,14 +14,14 @@ PERN full-stack app (PostgreSQL, Express, React, Node) app with a React frontend
 
 ## Screenshots
 
-## Technologies
-# Backend
+# Technologies
+## Backend
 PostgreSQL 
 Express.js 
 Node.js 
 Postman API 
 
-# Frontend
+## Frontend
 React 
 Chakra CSS
 
