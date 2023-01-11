@@ -25,8 +25,8 @@ Postman API
 React 
 Chakra CSS
 
-## Setup
-# Backend
+# Setup
+## Backend
 Install dependencies using npm i
 Install nodemon globally if you don't already have it
 Install PostgreSQL & run it (requires the password you created during installation)
