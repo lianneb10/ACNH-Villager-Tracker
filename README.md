@@ -1,7 +1,7 @@
 # ACNH-Villager-Tracker
 
 # 🍃 ACNH Villager Tracker 
-PERN full-stack app (PostgreSQL, Express, React, Node) app with a React frontend, planned to be deployed to Heroku. 
+MERN full-stack app (Mongoose, Express, React, Node) app with a React frontend, planned to be deployed to Heroku. 
 
 ## 📄 Table of contents
 * ACNH Villager Tracker
@@ -16,7 +16,7 @@ PERN full-stack app (PostgreSQL, Express, React, Node) app with a React frontend
 
 # Technologies
 ## Backend
-PostgreSQL 
+Mongoose
 Express.js 
 Node.js 
 Postman API 
