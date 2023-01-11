@@ -23,6 +23,7 @@ Postman API
 
 # Frontend
 React 
+Vue CSS Framework
 
 ## Setup
 # Backend
@@ -48,8 +49,9 @@ All data stored in PostgreSQL database that can also be viewed and changed from 
 React app created from the command prompt using Create React App
 
 
-## Inspiration
+## Inspiration & References
 [AndrewJBateman](https://github.com/AndrewJBateman/pern-stack-todo) for README formatting
+[Matt's Allo Backend](https://github.com/GonczarM/Allo-BackEnd) for structuring with three controllers/models
 
 
 ## Contact
