@@ -16,14 +16,13 @@ PERN full-stack app (PostgreSQL, Express, React, Node) app with a React frontend
 
 ## Technologies
 # Backend
-PostgreSQL v12
+PostgreSQL 
 Express.js 
 Node.js 
 Postman API 
 
 # Frontend
-React framework v16
-Bootstrap v4 component library
+React 
 
 ## Setup
 # Backend
@@ -50,11 +49,7 @@ React app created from the command prompt using Create React App
 
 
 ## Inspiration
-The Stoic Programmers, PERN Stack Course - PostgreSQL, Express, React, and Node
-The Stoic Programmers, How to Deploy a PERN application on Heroku
-React documentation
-Enable Emmet support for JSX in Visual Studio Code | React
-js-beautify for VS Code
+[AndrewJBateman](https://github.com/AndrewJBateman/pern-stack-todo) for README formatting
 
 
 ## Contact
