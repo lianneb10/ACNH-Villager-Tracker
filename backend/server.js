@@ -1,37 +1,59 @@
-// dependencies
 const express = require('express');
 const app = express();
-const cors = require('cors');
-const path = require('path');
-require('./models');
-require('dotenv').config();
-const PORT = process.env.PORT;
-// access controllers
-const usersCtrl = require('./controllers/users');
-const islandsCtrl = require('./controllers/islands');
-const villagerCtrl = require('./controllers/villagers');
-//routes
-app.use('/user', usersCtrl);
-app.use('/island', islandsCtrl);
-app.use('/villager', villagerCtrl)
+const port = 3001;
 
-//middleware
-// use the React build folder for static files
-app.use(
-	express.static(path.join(path.dirname(__dirname), 'frontend', 'build'))
-);
-// cross origin allowance
-app.use(cors());
-// parse the body data
-app.use(express.urlencoded({ extended: true }));
+const user_model = require('./user_model');
+
 app.use(express.json());
-// any other route not matching the routes above gets routed by React
-app.get('*', (req, res) => {
-	res.sendFile(
-		path.join(path.dirname(__dirname), 'frontend', 'build', 'index.html')
+app.use(function (req, res, next) {
+	res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+	res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+	res.setHeader(
+		'Access-Control-Allow-Headers',
+		'Content-Type, Access-Control-Allow-Headers'
 	);
+	next();
 });
 
-app.listen(PORT, () => {
-    console.log(`listening on port ${PORT}`);
-}) 
+
+//middleware
+
+// app.use(cors())
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+
+app.get('/', (req, res) => {
+	user_model
+		.getUsers()
+		.then((response) => {
+			res.status(200).json(response);
+		})
+		.catch((error) => {
+			res.status(500).json(error);
+		});
+});
+
+app.post('/users', (req, res) => {
+	user_model
+		.createUser(req.body)
+		.then((response) => {
+			res.status(200).send(response);
+		})
+		.catch((error) => {
+			res.status(500).send(error);
+		});
+});
+
+app.delete('/users/:id', (req, res) => {
+	user_model
+		.deleteUser(req.params.id)
+		.then((response) => {
+			res.status(200).send(response);
+		})
+		.catch((error) => {
+			res.status(500).send(error.message);
+		});
+});
+app.listen(port, () => {
+	console.log(`App running on port ${port}.`);
+});
