@@ -12,7 +12,7 @@ PERN full-stack app (PostgreSQL, Express, React, Node) app with a React frontend
   * [Inspiration](#inspiration)
   * [Contact](#contact)
 
-## Screenshots
+# Screenshots
 
 # Technologies
 ## Backend
@@ -34,25 +34,25 @@ Add database access credentials to db.js - recommend installing npm dotenv & usi
 Postgresql shell commands: \l list all databases. \c database1 connect to database1. \dt inspect tables. \d+ inspect table & show relation information. \q to quit
 
 
-# Frontend
+## Frontend
 Change to client directory
 Install dependencies using npm i.
 run npm start. Frontend will open at http://localhost:3000/
 
 
-## Features 
+# Features 
 
-# Backend
+## Backend
 All data stored in PostgreSQL database that can also be viewed and changed from the PostgreSQL shell (psql)
 
-# Frontend
+## Frontend
 React app created from the command prompt using Create React App
 
 
-## Inspiration & References
+# Inspiration & References
 [AndrewJBateman](https://github.com/AndrewJBateman/pern-stack-todo) for README formatting
 [Matt's Allo Backend](https://github.com/GonczarM/Allo-BackEnd) for structuring with three controllers/models
 
 
-## Contact
+# Contact
 Repo created by Lianne Aratea, contact aratealianne@gmail.com
