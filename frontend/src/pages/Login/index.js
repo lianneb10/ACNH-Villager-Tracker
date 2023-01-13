@@ -16,6 +16,7 @@ export default function Login(props) {
 		event.preventDefault();
 		loginToAccount(formState).then((data) => {
 			localStorage.token = data.token;
+            localStorage.user_id = data.user._id;
 			props.setLogInStatus(true);
 			props.setUser(data.user);
 		});
@@ -23,7 +24,7 @@ export default function Login(props) {
 	};
 
 	return (
-		<div className='card loggin-form' style={{ width: '20rem' }}>
+		<div className='card login-form' style={{ width: '20rem' }}>
 			<div className='card-body'>
 				<h1>Login</h1>
 				<form onSubmit={handleSubmit}>

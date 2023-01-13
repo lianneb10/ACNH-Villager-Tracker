@@ -41,7 +41,7 @@ function App() {
 		if (localStorage.token) {
 			setLogInStatus(true);
 			try {
-				getUser(localStorage.user_Id).then((foundUser) => {
+				getUser(localStorage.user_id).then((foundUser) => {
 					setUser(foundUser.user);
 				});
 			} catch (error) {

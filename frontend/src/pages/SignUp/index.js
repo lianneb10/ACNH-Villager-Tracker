@@ -15,7 +15,7 @@ export default function SignUp(props) {
 		event.preventDefault();
 		signUp(formState).then((data) => {
 			localStorage.token = data.token;
-			localStorage.user_Id = data.user._id;
+			localStorage.user_id = data.user._id;
 			props.setUser(data.user);
 		});
 		navigate('/login');
