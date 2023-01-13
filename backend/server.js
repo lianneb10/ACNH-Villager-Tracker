@@ -7,8 +7,8 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 // access controllers
 const usersCtrl = require('./controllers/users');
-// const islandsCtrl = require('./controllers/islands');
-// const villagerCtrl = require('./controllers/villagers');
+const islandsCtrl = require('./controllers/islands');
+const villagerCtrl = require('./controllers/villagers');
 
 //middleware
 // cross origin allowance
@@ -19,8 +19,8 @@ app.use(express.json());
 
 //routes
 app.use('/user', usersCtrl);
-// app.use('/island', islandsCtrl);
-// app.use('/villager', villagerCtrl)
+app.use('/island', islandsCtrl);
+app.use('/villager', villagerCtrl)
 
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);

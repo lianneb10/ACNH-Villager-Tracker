@@ -24,5 +24,5 @@ mongoose.connection.on('error', (error) => {
 });
 
 module.exports.User = require('./user');
-// module.exports.Island = require('./island');
-// module.exports.Villager= require('./villager');
+module.exports.Island = require('./island');
+module.exports.Villager= require('./villager');
