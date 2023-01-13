@@ -18,7 +18,7 @@ export default function User(prop) {
 		setFormState({ ...formState, [event.target.id]: event.target.value });
 	};
 
-	const handleSubmitUpdateUser = (event) => {
+	const handleSubmit = (event) => {
 		event.preventDefault();
 		updateUser(prop.user._id, formState);
 		setShowForm(false);
@@ -78,7 +78,7 @@ export default function User(prop) {
 				</div>
 				{showForm ? (
 					<div className='edit-form' style={{ width: '20rem' }}>
-						<form onSubmit={handleSubmitUpdateUser}>
+						<form onSubmit={handleSubmit}>
 							<label className='form-label' htmlFor='username'>
 								Username:
 							</label>

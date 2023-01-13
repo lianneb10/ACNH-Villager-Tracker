@@ -65,7 +65,7 @@ function App() {
 
 			{/* ROUTES */}
 			<Routes>
-				<Route path='/' element={<Home />} />
+				<Route path='/' element={<Home isLoggedIn={isLoggedIn} />} />
 				<Route
 					path='/user-info'
 					element={<User user={user} setLogInStatus={setLogInStatus} />}

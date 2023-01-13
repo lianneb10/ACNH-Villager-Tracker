@@ -1,6 +1,17 @@
 import axios from 'axios';
 let baseURL = {baseURL: window.location.origin.replace(/:[0-9]+$/,"") + ":8000"};
 
+
+
+//ISLAND CRUD
+
+export async function createIsland(formData, user_id) {
+    const {data} = await axios.post(`island/create/${user_id}`, formData, baseURL);
+    return data;
+}
+
+
+//USER CRUD
 // sign up function
 export async function signUp(formData) {
 	const { data } = await axios.post('user/signup', formData, baseURL);
