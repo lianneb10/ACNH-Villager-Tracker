@@ -13,6 +13,7 @@ import Nav from './components/Nav';
 
 // utils
 import { getUser } from './utils/api';
+import IslandShow from './pages/Island';
 // styles
 
 
@@ -20,22 +21,6 @@ function App() {
 	// state
 	const [isLoggedIn, setLogInStatus] = useState(false);
 	const [user, setUser] = useState([]);
-	// Api data
-
-	// APOD searcher function
-	// function getImages() {
-	// 	/* Build a URL from the searchOptions object */
-	// 	// const key = process.env.REACT_APP_APOD_KEY;
-	// 	const url =
-	// 		'https://api.nasa.gov/planetary/apod?api_key=9lSTCZNq5GoBuU3lchGbDwvD6dGM7q1hwhF4tP5V&start_date=2022-12-01&end_date=2022-12-31';
-	// 	fetch(url)
-	// 		.then((response) => response.json())
-	// 		.then((response) => {
-	// 			setMonthImages(response);
-	// 			setMedia_type(response);
-	// 		})
-	// 		.catch(console.error);
-	// }
 	//useEffect
 	useEffect(() => {
 		if (localStorage.token) {
@@ -65,7 +50,7 @@ function App() {
 
 			{/* ROUTES */}
 			<Routes>
-				<Route path='/' element={<Home isLoggedIn={isLoggedIn} />} />
+				<Route path='/' element={<Home isLoggedIn={isLoggedIn} user={user}/>} />
 				<Route
 					path='/user-info'
 					element={<User user={user} setLogInStatus={setLogInStatus} />}
@@ -91,6 +76,12 @@ function App() {
 						/>
 					}
 				/>
+				<Route
+					path='/island'
+					element={
+						<IslandShow />
+					}
+					/>
 			</Routes>
 		</div>
 	);

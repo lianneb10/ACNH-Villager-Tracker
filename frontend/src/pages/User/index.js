@@ -3,7 +3,7 @@ import { updateUser } from '../../utils/api';
 import { deleteUser } from '../../utils/api';
 import { useNavigate } from 'react-router-dom';
 
-export default function User(prop) {
+export default function User(props) {
 	const navigate = useNavigate();
 	// function to reveal edit form
 	const [showForm, setShowForm] = useState(false);
@@ -11,8 +11,8 @@ export default function User(prop) {
 	// edit form and changed states
 	const [formState, setFormState] = useState({ username: '', password: '' });
 	useEffect(() => {
-		setFormState(prop.user);
-	}, [showForm, prop.user]);
+		setFormState(props.user);
+	}, [showForm, props.user]);
 
 	const handleChange = (event) => {
 		setFormState({ ...formState, [event.target.id]: event.target.value });
@@ -20,15 +20,15 @@ export default function User(prop) {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		updateUser(prop.user._id, formState);
+		updateUser(props.user._id, formState);
 		setShowForm(false);
 		navigate('/user-info');
 	};
 	// delete user function
 	const destroyUser = () => {
-		deleteUser(prop.user._id);
+		deleteUser(props.user._id);
 		localStorage.clear();
-		prop.setLogInStatus(false);
+		props.setLogInStatus(false);
 		navigate('/');
 	};
 

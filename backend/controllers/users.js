@@ -64,7 +64,7 @@ router.get('/', async (req, res) => {
 
 // show
 router.get('/:id', async (req, res) => {
-	const foundUser = await db.User.findById(req.params.id);
+	const foundUser = await db.User.findById(req.params.id).populate({path: 'islands', populate: {path: 'villagers'}});
 	res.json({
 		user: foundUser,
 	});
