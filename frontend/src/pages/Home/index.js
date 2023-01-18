@@ -1,7 +1,7 @@
 // packages
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { createIsland } from '../../utils/api';
+import { createIsland, deleteIsland } from '../../utils/api';
 import { useNavigate } from 'react-router-dom';
 import { Icons } from '../../components/Icon';
 
@@ -20,7 +20,9 @@ export default function Home(props) {
 		console.log(island)
 		setShowForm(false);
 		navigate(`/island/${island.island._id}`);
+		props.refresh();
 	};
+
 	// render JSX
 	return (
 		<div className='main-container'>
@@ -35,6 +37,14 @@ export default function Home(props) {
 						{props.user.islands
 							? props.user.islands.map((island) => (
 									<div className='island-hold'>
+										<button id='delete' onClick={async (event) => {
+		// eslint-disable-next-line no-restricted-globals
+		if (confirm ("Are you sure you want to delete this island?")) {event.preventDefault();
+		await deleteIsland(island._id);
+		props.refresh();}
+	}}> X
+
+										</button>
 										<Link to={`/island/${island._id}`}>
 											<h2 key={island._id}> {island.name} </h2>
 										</Link>

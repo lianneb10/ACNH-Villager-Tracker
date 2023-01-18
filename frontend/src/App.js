@@ -1,5 +1,5 @@
 // packages
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 // pages
@@ -21,8 +21,8 @@ function App() {
 	// state
 	const [isLoggedIn, setLogInStatus] = useState(false);
 	const [user, setUser] = useState([]);
-	//useEffect
-	useEffect(() => {
+
+	const refresh = useCallback(() => {
 		if (localStorage.token) {
 			setLogInStatus(true);
 			try {
@@ -34,6 +34,11 @@ function App() {
 			}
 		}
 	}, []);
+
+	//useEffect
+	useEffect(() => {
+		refresh()
+	}, [refresh]);
 
 	return (
 		<div>
@@ -50,7 +55,12 @@ function App() {
 
 			{/* ROUTES */}
 			<Routes>
-				<Route path='/' element={<Home isLoggedIn={isLoggedIn} user={user}/>} />
+				<Route
+					path='/'
+					element={
+						<Home isLoggedIn={isLoggedIn} user={user} refresh={refresh} />
+					}
+				/>
 				<Route
 					path='/user-info'
 					element={<User user={user} setLogInStatus={setLogInStatus} />}
@@ -79,9 +89,9 @@ function App() {
 				<Route
 					path='/island/:id'
 					element={
-						<IslandShow user={user} isLoggedIn={isLoggedIn}/>
+						<IslandShow user={user} isLoggedIn={isLoggedIn} refresh={refresh} />
 					}
-					/>
+				/>
 			</Routes>
 		</div>
 	);

@@ -25,6 +25,7 @@ export default function IslandShow(props) {
 		await createVillager(formState, id);
 		setShowForm(false);
 		navigate(`/island/${id}`);
+        props.refresh();
 	};
 
     const currentIsland = props.user.islands ? props.user.islands.find(
@@ -49,6 +50,7 @@ export default function IslandShow(props) {
 							  ))
 							: null}
 
+                        
 						<button
 							id='create-villager'
 							onClick={() => {
