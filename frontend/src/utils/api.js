@@ -25,6 +25,19 @@ export async function createIsland(formData, user_id) {
     return data;
 }
 
+//island update on island show page
+
+export async function updateIsland(formData, island_id) {
+	const config = {
+		headers: {
+			Authorization: localStorage.getItem('token'),
+		},
+		...baseURL,
+	};
+	const { data } = await axios.put(`island/${island_id}`,  formData, config);
+	return data;
+}
+
 //villager create
 export async function createVillager(formData, island_id) {
     const config = {
@@ -35,6 +48,16 @@ export async function createVillager(formData, island_id) {
 		};
     const { data } = await axios.post(`villager/create/${island_id}`, formData, config);
     return data;
+}
+
+// delete villager
+export async function deleteVillager(villager_id) {
+	const config = {
+		headers: {
+			Authorization: localStorage.getItem('token'),
+		}, ...baseURL
+	};
+	await axios.delete(`villager/${villager_id}`, config);
 }
 
 

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const db = require('./index');
 
 const villagerSchema = new mongoose.Schema({
 	name: {
@@ -10,6 +11,11 @@ const villagerSchema = new mongoose.Schema({
         required: true,
     }
 });
+
+
+//react cascade deleting
+    villagerSchema.post('findOneAndDelete', function(result) {
+   db.Island.updateOne({}, {$pull: {villagers: result._id}}).exec();})
 
 const Villager = mongoose.model('Villager', villagerSchema);
 
