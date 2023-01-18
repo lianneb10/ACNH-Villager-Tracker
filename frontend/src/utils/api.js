@@ -16,23 +16,17 @@ export async function createIsland(formData, user_id) {
     return data;
 }
 
-//HOME villager icon show
-
-// Api data
-
-	// APOD searcher function
-	// function getImages() {
-	// 	/* Build a URL from the searchOptions object *
-	// 	const url =
-	// 		'https://api.nasa.gov/planetary/apod?api_key=9lSTCZNq5GoBuU3lchGbDwvD6dGM7q1hwhF4tP5V&start_date=2022-12-01&end_date=2022-12-31';
-	// 	fetch(url)
-	// 		.then((response) => response.json())
-	// 		.then((response) => {
-	// 			setMonthImages(response);
-	// 			setMedia_type(response);
-	// 		})
-	// 		.catch(console.error);
-	// }
+//villager create
+export async function createVillager(formData, island_id) {
+    const config = {
+			headers: {
+				Authorization: localStorage.getItem('token'),
+			},
+			...baseURL,
+		};
+    const { data } = await axios.post(`villager/create/${island_id}`, formData, config);
+    return data;
+}
 
 
 //USER CRUD

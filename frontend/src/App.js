@@ -77,9 +77,9 @@ function App() {
 					}
 				/>
 				<Route
-					path='/island'
+					path='/island/:id'
 					element={
-						<IslandShow />
+						<IslandShow user={user} isLoggedIn={isLoggedIn}/>
 					}
 					/>
 			</Routes>
