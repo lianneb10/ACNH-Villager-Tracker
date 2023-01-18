@@ -23,7 +23,7 @@ Postman API
 
 ## Frontend
 React 
-Chakra CSS
+Primer CSS Framework from Github
 
 # Setup
 ## Backend
