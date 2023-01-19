@@ -114,9 +114,9 @@ export default function IslandShow(props) {
 						) : null}
 					</div>
 
-					<div className='islandShow'>
+					<div >
 						{currentIsland.villagers.map((villager) => (
-							<div className='villager-hold' key={villager._id}>
+							<div key={villager._id}>
 								<div className='delete-button'>
 									<button
 										className='btn btn-danger'
