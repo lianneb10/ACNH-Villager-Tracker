@@ -6,7 +6,7 @@ export function Photos(props) {
 		<img 
 			className = 'villager-image'
 			alt=''
-            width='200em'
+            max-width= '50%'
 			src={
 				'https://acnhapi.com/v1a/images/villagers/' +
 				villagerNameToId(props.name)

@@ -72,7 +72,8 @@ export default function Home(props) {
 										{island.villagers.map((villager) => (
 											<div className='home-villager'>
 											<p key={villager._id}>
-												{villager.name} <Icons name={villager.name} />
+												
+												 <Icons name={villager.name} />
 											</p>
 											</div>
 										))}
