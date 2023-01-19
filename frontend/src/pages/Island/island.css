@@ -1,0 +1,29 @@
+.island-button-holder {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    justify-content: center;
+}
+
+.island-button-holder p {
+    margin: 10px 5px;
+}
+
+.delete-button {
+    padding-bottom: 10px;
+}
+
+.solo-villager{
+    padding: 15px;
+    margin: 20px;
+    background-color: rgb(218, 225, 194);
+    border-radius: 2em;
+}
+
+.villager-image {
+    border-radius: 4em;
+}
+
+.villager-hold {
+    text-align: center;
+}

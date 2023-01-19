@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { villagerNameToId } from '../../utils/api';
+import '../../pages/Island/island.css'
 
 export function Info(props) {
     const [villagerInfo, setVillagerInfo] = useState(null);
@@ -17,7 +18,16 @@ export function Info(props) {
 			{villagerInfo === null ? (
 				<p>Loading info...</p>
 			) : (
+				<>
+				<div className= "villager-info">
 				<p>Species: {villagerInfo.species}</p>
+				<p>Catchphrase: "{villagerInfo["catch-phrase"]}"</p>
+				<p>Birthday: {villagerInfo["birthday-string"]}</p>
+				<p>Gender: {villagerInfo.gender}</p>
+				<p>Personality: {villagerInfo.personality}</p>
+				</div>
+				</>
+
 			)}
 		</div>
 	);

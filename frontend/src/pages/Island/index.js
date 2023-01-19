@@ -5,6 +5,7 @@ import { createVillager, deleteVillager, deleteIsland, updateIsland } from '../.
 import { Photos } from '../../components/Photo';
 import { Info } from '../../components/Info';
 import { options } from './options';
+import './island.css'
 
 export default function IslandShow(props) {
 	const navigate = useNavigate();
@@ -41,8 +42,10 @@ export default function IslandShow(props) {
 		<div className='main-container'>
             
 			{props.isLoggedIn && currentIsland ? (
-				<div>
+				<>
 					<h3>Island: {currentIsland.name}</h3>
+				<div className='island-button-holder'>
+
 					<p>
 						<button
 							className='btn btn-danger'
@@ -81,6 +84,7 @@ export default function IslandShow(props) {
 							Edit Island Name
 						</button>
 					</p>
+				</div>
 
 
 					<div>
@@ -114,9 +118,9 @@ export default function IslandShow(props) {
 						) : null}
 					</div>
 
-					<div >
+					<div className="villager-islandpagehold">
 						{currentIsland.villagers.map((villager) => (
-							<div key={villager._id}>
+							<div key={villager._id} className='solo-villager'>
 								<div className='delete-button'>
 									<button
 										className='btn btn-danger'
@@ -146,7 +150,7 @@ export default function IslandShow(props) {
 							</div>
 						))}
 					</div>
-				</div>
+				</>
 			) : null}
 		</div>
 	);
