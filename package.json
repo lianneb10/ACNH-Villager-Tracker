@@ -1,29 +1,28 @@
 {
-  "name": "acnh-villager-tracker",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "# 🍃 ACNH Villager Tracker  PERN full-stack app (PostgreSQL, Express, React, Node) app with a React frontend, planned to be deployed to Heroku.",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "react-scripts start"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lianneb10/ACNH-Villager-Tracker.git"
+     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd frontend/ && npm run build && cd ../backend/ && node server.js",
+    "frontend": "cd frontend/ && react-scripts start",
+    "backend": "cd backend/ && nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lianneb10/ACNH-Villager-Tracker/issues"
-  },
-  "homepage": "https://github.com/lianneb10/ACNH-Villager-Tracker#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jwt-simple": "^0.5.6",
     "method-override": "^3.0.0",
-    "pg": "^8.8.0"
+    "mongoose": "^6.8.3",
+    "axios": "^1.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.6.2",
+    "react-scripts": "5.0.1"
   }
 }
