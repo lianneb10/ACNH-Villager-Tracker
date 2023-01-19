@@ -56,7 +56,7 @@ function App() {
 			{/* ROUTES */}
 			<Routes>
 				<Route
-					path='/'
+					path=''
 					element={
 						<Home isLoggedIn={isLoggedIn} user={user} refresh={refresh} />
 					}
