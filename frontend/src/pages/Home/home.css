@@ -29,7 +29,9 @@ p{
 
 .island-hold {
     padding: 15px;
-    margin: 20px;
+    margin: 10px auto;
     background-color: rgb(218, 225, 194);
     border-radius: 2em;
+    max-width: 80%;
+    min-width: 25em;
 }
