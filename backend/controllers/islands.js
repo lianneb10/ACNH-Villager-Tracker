@@ -26,12 +26,12 @@ router.get('/', async (req, res) => {
 });
 
 // show
-router.get('/:id', async (req, res) => {
-	const foundIsland = await db.Island.findById(req.params.id);
-	res.json({
-		island: foundIsland,
-	});
-});
+// router.get('/:id', async (req, res) => {
+// 	const foundIsland = await db.Island.findById(req.params.id);
+// 	res.json({
+// 		island: foundIsland,
+// 	});
+// });
 
 //update
 router.put('/:id', isAuthenticated, async (req, res) => {

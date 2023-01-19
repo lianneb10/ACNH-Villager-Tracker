@@ -12,7 +12,7 @@ export async function deleteIsland(island_id) {
 		},
 		...baseURL,
 	};
-	await axios.delete(`island/${island_id}`, config);
+	await axios.delete(`/island/${island_id}`, config);
 }
 export async function createIsland(formData, user_id) {
     const config = {
@@ -21,7 +21,7 @@ export async function createIsland(formData, user_id) {
 			},
 			...baseURL,
 		};
-    const {data} = await axios.post(`island/create/${user_id}`, formData, config);
+    const {data} = await axios.post(`/island/create/${user_id}`, formData, config);
     return data;
 }
 
@@ -34,7 +34,7 @@ export async function updateIsland(formData, island_id) {
 		},
 		...baseURL,
 	};
-	const { data } = await axios.put(`island/${island_id}`,  formData, config);
+	const { data } = await axios.put(`/island/${island_id}`,  formData, config);
 	return data;
 }
 
@@ -46,7 +46,7 @@ export async function createVillager(formData, island_id) {
 			},
 			...baseURL,
 		};
-    const { data } = await axios.post(`villager/create/${island_id}`, formData, config);
+    const { data } = await axios.post(`/villager/create/${island_id}`, formData, config);
     return data;
 }
 
@@ -57,20 +57,20 @@ export async function deleteVillager(villager_id) {
 			Authorization: localStorage.getItem('token'),
 		}, ...baseURL
 	};
-	await axios.delete(`villager/${villager_id}`, config);
+	await axios.delete(`/villager/${villager_id}`, config);
 }
 
 
 //USER CRUD
 // sign up function
 export async function signUp(formData) {
-	const { data } = await axios.post('user/signup', formData, baseURL);
+	const { data } = await axios.post('/user/signup', formData, baseURL);
 	return data;
 }
 
 //Log in to User Account
 export async function loginToAccount(formData) {
-	const { data } = await axios.post('user/login', formData, baseURL);
+	const { data } = await axios.post('/user/login', formData, baseURL);
 	return data;
 }
 
@@ -82,7 +82,7 @@ export async function updateUser(userId, formData) {
 			Authorization: localStorage.getItem('token'),
 		}, ...baseURL
 	};
-	const { data } = await axios.put(`user/${userId}`, formData, config);
+	const { data } = await axios.put(`/user/${userId}`, formData, config);
 	return data;
 }
 
@@ -93,12 +93,12 @@ export async function deleteUser(userId) {
 			Authorization: localStorage.getItem('token'),
 		}, ...baseURL
 	};
-	await axios.delete(`user/${userId}`, config);
+	await axios.delete(`/user/${userId}`, config);
 }
 
 //getUser
 export async function getUser(userid) {
-	const { data } = await axios.get(`user/${userid}`, baseURL);
+	const { data } = await axios.get(`/user/${userid}`, baseURL);
 	return data;
 }
 
