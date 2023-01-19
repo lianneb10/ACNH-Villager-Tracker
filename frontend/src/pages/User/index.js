@@ -18,11 +18,12 @@ export default function User(props) {
 		setFormState({ ...formState, [event.target.id]: event.target.value });
 	};
 
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
 		event.preventDefault();
-		updateUser(props.user._id, formState);
+		await updateUser(props.user._id, formState);
 		setShowForm(false);
 		navigate('/user-info');
+		props.refresh();
 	};
 	// delete user function
 	const destroyUser = () => {

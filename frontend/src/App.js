@@ -63,7 +63,7 @@ function App() {
 				/>
 				<Route
 					path='/user-info'
-					element={<User user={user} setLogInStatus={setLogInStatus} />}
+					element={<User user={user} setLogInStatus={setLogInStatus} refresh={refresh}/>}
 				/>
 				<Route
 					path='/login'
@@ -73,6 +73,7 @@ function App() {
 							setLogInStatus={setLogInStatus}
 							setUser={setUser}
 							user={user}
+							refresh={refresh}
 						/>
 					}
 				/>

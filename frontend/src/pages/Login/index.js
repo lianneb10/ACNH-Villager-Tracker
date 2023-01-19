@@ -18,9 +18,9 @@ export default function Login(props) {
 			localStorage.token = data.token;
             localStorage.user_id = data.user._id;
 			props.setLogInStatus(true);
-			props.setUser(data.user);
+			navigate('/');
+			props.refresh();
 		});
-		navigate('/');
 	};
 
 	return (

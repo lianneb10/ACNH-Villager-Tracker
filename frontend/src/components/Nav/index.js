@@ -11,29 +11,36 @@ export default function Nav(props) {
 	};
 	// render JSX
 	return (
-		<nav>
-			<div className='nav-item' key='1'>
+		<nav className='Header'>
+			<div className='Header-item'>
 				<Link to='/'>Home</Link>
 			</div>
 
 			{props.isLoggedIn ? (
-				<div className='nav-item' key='2'>
-					<Link
-						to='/'
-						onClick={() => {
-							props.setLogInStatus(false);
-							handleLogout();
-						}}>
-						Log Out
-					</Link>
-
-					<Link to='/user-info'>User Account</Link>
-				</div>
+				<>
+					<div className='Header-item'>
+						<Link
+							to='/'
+							onClick={() => {
+								props.setLogInStatus(false);
+								handleLogout();
+							}}>
+							Log Out
+						</Link>
+					</div>
+					<div className='Header-item'>
+						<Link to='/user-info'>User Account</Link>
+					</div>
+				</>
 			) : (
-				<div className='nav-item' key='3'>
-					<Link to='/signup'>Sign Up</Link>
-					<Link to='/login'>Login</Link>
-				</div>
+				<>
+					<div className='Header-item'>
+						<Link to='/signup'>Sign Up</Link>
+					</div>
+					<div className='Header-item'>
+						<Link to='/login'>Login</Link>
+					</div>
+				</>
 			)}
 		</nav>
 	);

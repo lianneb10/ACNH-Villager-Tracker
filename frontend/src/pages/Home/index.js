@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { createIsland } from '../../utils/api';
 import { useNavigate } from 'react-router-dom';
 import { Icons } from '../../components/Icon';
+import './home.css'
 
 export default function Home(props) {
 	const navigate = useNavigate();
@@ -34,7 +35,7 @@ export default function Home(props) {
 						island below by clicking into it.
 					</h3>
 
-					<button
+					<button className="btn" type="button"
 						id='create-island'
 						onClick={() => {
 							setShowForm(!showForm);
@@ -52,28 +53,34 @@ export default function Home(props) {
 									value={formState.name}
 								/>
 							</form>
-							<button type='submit' onClick={handleSubmit}>
+							<button className="btn" type='submit' onClick={handleSubmit}>
 								Add Island
 							</button>
 						</div>
 					) : null}
 
 
-					<div className='createIsland'>
+					<div className='islandsHolder'>
 						{props.user.islands
 							? props.user.islands.map((island) => (
+								<>
 									<div className='island-hold' key={island._id}>
 										<Link to={`/island/${island._id}`}>
 											<h2> {island.name} </h2>
 										</Link>
 
+										<div className='villager-hold'>
 										{island.villagers.map((villager) => (
+											<div className='home-villager'>
 											<p key={villager._id}>
-												{' '}
-												{villager.name} <Icons name={villager.name} />{' '}
+												{villager.name} <Icons name={villager.name} />
 											</p>
+											</div>
 										))}
+										</div>
+										
 									</div>
+									</>
 							  ))
 							: null}
 					</div>
