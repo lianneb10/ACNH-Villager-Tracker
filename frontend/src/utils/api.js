@@ -1,6 +1,6 @@
 import axios from 'axios';
-let baseURL = {baseURL: window.location.origin.replace(/:[0-9]+$/,"") + ":8000"};
-
+// let baseURL = {baseURL: window.location.origin.replace(/:[0-9]+$/,"") + ":8000"};
+let baseURL = {};
 
 
 //ISLAND show on home page
