@@ -16,14 +16,14 @@ MERN full-stack app (Mongoose, Express, React, Node) app with a React frontend, 
 
 # Technologies
 ## Backend
-Mongoose
-Express.js 
-Node.js 
-Postman API 
+* Mongoose
+* Express.js 
+* Node.js 
+* Postman API 
 
 ## Frontend
-React 
-Primer CSS Framework from Github
+* React 
+* Primer CSS Framework from Github
 
 # Setup
 ## Backend
