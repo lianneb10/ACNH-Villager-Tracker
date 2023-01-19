@@ -1,6 +1,6 @@
 // packages
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { createIsland } from '../../utils/api';
 import { useNavigate } from 'react-router-dom';
 import { Icons } from '../../components/Icon';
