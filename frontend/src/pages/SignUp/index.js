@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { signUp } from '../../utils/api';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function SignUp(props) {
 	const initialState = { username: '', password: '' };
@@ -24,6 +24,7 @@ export default function SignUp(props) {
 		<div className='card-signup-form'>
 			<div className='card-body'>
 				<h1>Sign Up</h1>
+				<p>Already have an account?  <Link to={'/login'}> Login here!</Link></p>
 				<form onSubmit={handleSubmit}>
 					<label htmlFor='username' className='form-label'>
 						<p>Username</p>

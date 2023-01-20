@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { loginToAccount } from '../../utils/api';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Login(props) {
 	const navigate = useNavigate();
@@ -24,30 +24,33 @@ export default function Login(props) {
 	};
 
 	return (
-		<div className='card login-form' >
+		<div className='card login-form'>
 			<div className='card-body'>
 				<h1>Login</h1>
+				<p>
+					Don't have an account? <Link to={'/signup'}>  Sign up here!</Link>
+				</p>
 				<form onSubmit={handleSubmit}>
 					<label htmlFor='username' className='form-label'>
 						<p>Username:</p>
-					<input
-						className='form-control'
-						type='text'
-						name='username'
-						onChange={handleChange}
-						defaultValue={formState.username}
+						<input
+							className='form-control'
+							type='text'
+							name='username'
+							onChange={handleChange}
+							defaultValue={formState.username}
 						/>
 					</label>
 					<label htmlFor='password' className='form-label'>
 						<p>Password:</p>
-					<input
-						className='form-control'
-						type='password'
-						name='password'
-						onChange={handleChange}
-						defaultValue={formState.password}
+						<input
+							className='form-control'
+							type='password'
+							name='password'
+							onChange={handleChange}
+							defaultValue={formState.password}
 						/>
-						</label>
+					</label>
 					<button className='btn btn-primary' type='submit'>
 						Login
 					</button>
