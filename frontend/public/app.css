@@ -1,0 +1,42 @@
+* {cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat967.cur), auto !important;}
+
+@font-face {
+    font-family: Fink;
+    src: url('FinkHeavy.otf');}
+
+h1 {
+    font-family: Fink;
+    font-size: 10vh;
+}
+
+a { 
+    text-decoration: none;
+    color: rgb(38, 112, 144);
+}
+
+/* nav color change */
+.Header {
+    background-color: rgb(27, 49, 28);
+    justify-content: space-between;
+
+}    
+nav a {
+    color: white;
+    font-size: 3vh;
+    font-family: Fink;
+}
+
+/* sign up/log in page */
+
+.card-body {
+    background-color: rgb(218, 225, 194);
+    width: 50vw;
+    border-radius: 2em;
+    margin: 0 auto;
+}
+
+@media (max-width: 450px) {
+h1 {
+    font-size: 6vh;
+} 
+}

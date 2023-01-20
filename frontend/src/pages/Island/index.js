@@ -43,7 +43,7 @@ export default function IslandShow(props) {
             
 			{props.isLoggedIn && currentIsland ? (
 				<>
-					<h3>Island: {currentIsland.name}</h3>
+					<h1> {currentIsland.name} Island</h1>
 				<div className='island-button-holder'>
 
 					<p>

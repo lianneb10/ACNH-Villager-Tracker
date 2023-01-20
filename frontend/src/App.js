@@ -7,6 +7,7 @@ import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import User from './pages/User';
+import Page404 from './pages/404';
 
 // components
 import Nav from './components/Nav';
@@ -15,6 +16,7 @@ import Nav from './components/Nav';
 import { getUser } from './utils/api';
 import IslandShow from './pages/Island';
 // styles
+
 
 
 function App() {
@@ -93,6 +95,8 @@ function App() {
 						<IslandShow user={user} isLoggedIn={isLoggedIn} refresh={refresh} />
 					}
 				/>
+				<Route 
+					path='*' exact={true} element={ <Page404 /> } />
 			</Routes>
 		</div>
 	);

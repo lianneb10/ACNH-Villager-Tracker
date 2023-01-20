@@ -25,7 +25,7 @@ export default function Home(props) {
 	// render JSX
 	return (
 		<div className='main-container'>
-			<h1>Home Page</h1>
+			<h1>Animal Crossing Villager Tracker</h1>
 
 			{props.isLoggedIn ? (
 				<div>
@@ -63,10 +63,9 @@ export default function Home(props) {
 						{props.user.islands
 							? props.user.islands.map((island) => (
 								<>
+								<Link to={`/island/${island._id}`}>
 									<div className='island-hold' key={island._id}>
-										<Link to={`/island/${island._id}`}>
-											<h2> {island.name} </h2>
-										</Link>
+											<h2> {island.name} Island </h2>
 
 										<div className='villager-hold'>
 										{island.villagers.map((villager) => (
@@ -80,6 +79,7 @@ export default function Home(props) {
 										</div>
 										
 									</div>
+								</Link>
 									</>
 							  ))
 							: null}

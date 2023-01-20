@@ -21,7 +21,7 @@ export default function SignUp(props) {
 	}
 
 	return (
-		<div className='card signup-form' style={{ width: '20rem' }}>
+		<div className='card-signup-form'>
 			<div className='card-body'>
 				<h1>Sign Up</h1>
 				<form onSubmit={handleSubmit}>

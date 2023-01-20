@@ -1,0 +1,16 @@
+
+.error {
+    background-color:rgb(218, 225, 194);
+    text-align: center;
+    width: 80%;
+    border-radius: 3em;
+    margin: 20vh auto;
+}
+
+img.tom {
+    max-width: 200px;
+}
+
+.home-link {
+    font-size: 5vh;
+}

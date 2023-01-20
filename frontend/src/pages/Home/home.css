@@ -32,6 +32,6 @@ p{
     margin: 10px auto;
     background-color: rgb(218, 225, 194);
     border-radius: 2em;
-    max-width: 80%;
-    min-width: 25em;
+    max-width: 50em;
+    min-width: 15em;
 }

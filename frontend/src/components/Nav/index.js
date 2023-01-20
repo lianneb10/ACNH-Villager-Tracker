@@ -1,7 +1,6 @@
 // packages
 import { Link } from 'react-router-dom';
 
-// styles
 
 export default function Nav(props) {
 	//logout handle

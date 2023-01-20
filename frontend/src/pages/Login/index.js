@@ -24,31 +24,30 @@ export default function Login(props) {
 	};
 
 	return (
-		<div className='card login-form' style={{ width: '20rem' }}>
+		<div className='card login-form' >
 			<div className='card-body'>
 				<h1>Login</h1>
 				<form onSubmit={handleSubmit}>
 					<label htmlFor='username' className='form-label'>
-						Username:{' '}
-					</label>
+						<p>Username:</p>
 					<input
 						className='form-control'
 						type='text'
 						name='username'
 						onChange={handleChange}
 						defaultValue={formState.username}
-					/>
-                    < br/>
-					<label htmlFor='password' className='form-label'>
-						Password:{' '}
+						/>
 					</label>
+					<label htmlFor='password' className='form-label'>
+						<p>Password:</p>
 					<input
 						className='form-control'
 						type='password'
 						name='password'
 						onChange={handleChange}
 						defaultValue={formState.password}
-					/>
+						/>
+						</label>
 					<button className='btn btn-primary' type='submit'>
 						Login
 					</button>
