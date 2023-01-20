@@ -32,9 +32,8 @@ export default function Home(props) {
 				<div>
 					{ props.user.islands && props.user.islands.length === 0 ? (
 					<h3>
-						Thank you for logging in, please add an island or edit an existing
-						island below by clicking into it.
-					</h3>): null}
+						Thank you for logging in, please add an island!
+					</h3>): <h3>Click into an island below to edit its' name & add/delete villagers! </h3>}
 
 						<br />
 					<button className="btn" type="button"
