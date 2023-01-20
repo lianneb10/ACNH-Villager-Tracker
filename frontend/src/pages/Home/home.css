@@ -1,6 +1,7 @@
 
 body {
     background-color: var(--green);
+    padding-bottom: 60px;
 }
 .main-container{
     text-align:center;
