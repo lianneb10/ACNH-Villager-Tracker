@@ -44,7 +44,8 @@ run npm start. Frontend will open at http://localhost:3000/
 * Villager icons (pulled from external API) displayed within the islands on the home page
 * Villager information (pulled from external API) displayed in the island detail page 
 * Full CRUD on user model, full CRUD on island model, CRD on villager model
-*  Custom 404 Error page for handling URLs that do not exist in the code
+* Custom 404 Error page for handling URLs that do not exist in the code
+* Custom favicon for website utilizing [realfavicongenerator](https://realfavicongenerator.net/svg-favicon/)
 
 ## Backend
 * All data stored in MongoDB, which can be accessed and modified utilized the Mongo shell (mongosh).
