@@ -7,8 +7,12 @@
     justify-content: center;
 }
 
-.island-button-holder p {
+.island-button-holder button {
     margin: 10px 5px;
+}
+
+.edit-form {
+    padding-bottom: 20px;
 }
 
 /* villager section of island page */
