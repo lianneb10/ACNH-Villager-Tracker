@@ -1,7 +1,7 @@
 # ACNH-Villager-Tracker
 
 # 🍃 ACNH Villager Tracker 
-MERN full-stack app (Mongoose, Express, React, Node) app with a React frontend, planned to be deployed to Heroku. 
+MERN full-stack app (Mongoose, Express, React, Node) app with a React frontend, [deployed to Heroku](https://acnh-villager-tracker.herokuapp.com/).
 
 ## 📄 Table of contents
 * ACNH Villager Tracker
@@ -10,9 +10,13 @@ MERN full-stack app (Mongoose, Express, React, Node) app with a React frontend, 
   * [Setup](#setup)
   * [Features](#features)
   * [Inspiration](#inspiration)
+  * [External API](#external-api)
   * [Contact](#contact)
 
 # Screenshots
+![Screen Shot 2023-01-20 at 8 54 45 AM](https://user-images.githubusercontent.com/114965043/213757570-b76150c8-8875-4ba5-89a6-46b097e7c2af.png)
+![Screen Shot 2023-01-20 at 8 55 18 AM](https://user-images.githubusercontent.com/114965043/213757580-cbde09a1-f080-4229-a72d-93779c60f04c.png)
+
 
 # Technologies
 ## Backend
@@ -29,9 +33,8 @@ MERN full-stack app (Mongoose, Express, React, Node) app with a React frontend, 
 ## Backend
 Install dependencies using npm i
 Install nodemon globally if you don't already have it
-Install PostgreSQL & run it (requires the password you created during installation)
 Add database access credentials to db.js - recommend installing npm dotenv & using .env to hide credentials if commiting to Github
-Postgresql shell commands: \l list all databases. \c database1 connect to database1. \dt inspect tables. \d+ inspect table & show relation information. \q to quit
+
 
 
 ## Frontend
@@ -41,17 +44,25 @@ run npm start. Frontend will open at http://localhost:3000/
 
 
 # Features 
+* Villager icons (pulled from external API) displayed within the islands on the home page
+* Villager information (pulled from external API) displayed in the island detail page 
+* Full CRUD on user model, full CRUD on island model, CRD on villager model
+*  Custom 404 Error page for handling URLs that do not exist in the code
 
 ## Backend
-All data stored in PostgreSQL database that can also be viewed and changed from the PostgreSQL shell (psql)
+* All data stored in MongoDB, which can be accessed and modified utilized the Mongo shell (mongosh).
 
 ## Frontend
-React app created from the command prompt using Create React App
+* React app created from the command prompt using Create React App.
+* Primer CSS framework for styling of the application.
 
 
-# Inspiration & References
-[AndrewJBateman](https://github.com/AndrewJBateman/pern-stack-todo) for README formatting
-[Matt's Allo Backend](https://github.com/GonczarM/Allo-BackEnd) for structuring with three controllers/models
+# Inspiration 
+* [AndrewJBateman](https://github.com/AndrewJBateman/pern-stack-todo) for README formatting
+* [Matt's Allo Backend](https://github.com/GonczarM/Allo-BackEnd) for structuring with three controllers/models
+
+# External API
+* ACNH API: https://acnhapi.com/
 
 
 # Contact
