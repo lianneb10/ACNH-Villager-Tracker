@@ -1,5 +1,3 @@
-# ACNH-Villager-Tracker
-
 # 🍃 ACNH Villager Tracker 
 MERN full-stack app (Mongoose, Express, React, Node) app with a React frontend, [deployed to Heroku](https://acnh-villager-tracker.herokuapp.com/).
 
@@ -34,7 +32,6 @@ MERN full-stack app (Mongoose, Express, React, Node) app with a React frontend, 
 Install dependencies using npm i
 Install nodemon globally if you don't already have it
 Add database access credentials to db.js - recommend installing npm dotenv & using .env to hide credentials if commiting to Github
-
 
 
 ## Frontend
