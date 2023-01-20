@@ -34,6 +34,7 @@ export default function Home(props) {
 						Thank you for logging in, please add an island or edit an existing
 						island below by clicking into it.
 					</h3>): null}
+					
 						<br />
 					<button className="btn" type="button"
 						id='create-island'

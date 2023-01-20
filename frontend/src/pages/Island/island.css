@@ -24,7 +24,7 @@
 .solo-villager{
     padding: 10px;
     margin: 10px auto;
-    background-color: rgb(218, 225, 194);
+    background-color: var(--offwhite);
     border-radius: 2em;
 }
 

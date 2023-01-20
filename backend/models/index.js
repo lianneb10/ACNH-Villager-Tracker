@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const connectionString = process.env.MONGODBURI;
 
-
 mongoose.set('strictQuery', false);
 // connetc to MongoDB via mongoose
 mongoose.connect(connectionString, {

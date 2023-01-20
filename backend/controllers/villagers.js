@@ -37,18 +37,6 @@ router.get('/:id', async (req, res) => {
 	});
 });
 
-//update
-router.put('/:id', isAuthenticated, async (req, res) => {
-	const updatedVillager = await db.Villager.findByIdAndUpdate(
-		req.params.id,
-		req.body,
-		{
-			new: true,
-		}
-	);
-
-	res.json(updatedVillager);
-});
 
 //delete
 router.delete('/:id', isAuthenticated, async (req, res) => {

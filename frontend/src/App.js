@@ -11,13 +11,11 @@ import Page404 from './pages/404';
 
 // components
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 // utils
 import { getUser } from './utils/api';
 import IslandShow from './pages/Island';
-// styles
-
-
 
 function App() {
 	// state
@@ -53,7 +51,7 @@ function App() {
 			/>
 
 			{/* Footer */}
-			{/* <Footer /> */}
+			<Footer />
 
 			{/* ROUTES */}
 			<Routes>

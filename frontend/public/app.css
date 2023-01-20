@@ -1,5 +1,12 @@
 * {cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat967.cur), auto !important;}
 
+:root {
+    --darkgreen: rgb(27, 49, 28);
+    --green: rgb(21, 158, 112);
+    --offwhite: rgb(218, 225, 194);
+    --mediumblue: rgb(38, 112, 144);
+}
+
 @font-face {
     font-family: Fink;
     src: url('FinkHeavy.otf');}
@@ -11,12 +18,12 @@ h1 {
 
 a { 
     text-decoration: none;
-    color: rgb(38, 112, 144);
+    color: var(--mediumblue);
 }
 
 /* nav color change */
 .Header {
-    background-color: rgb(27, 49, 28);
+    background-color: var(--darkgreen);
     justify-content: space-between;
 
 }    
@@ -29,7 +36,7 @@ nav a {
 /* sign up/log in page */
 
 .card-body {
-    background-color: rgb(218, 225, 194);
+    background-color: var(--offwhite);
     max-width: 500px;
     border-radius: 2em;
     margin: 18vh auto;
