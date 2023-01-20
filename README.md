@@ -37,7 +37,7 @@ Add database access credentials to db.js - recommend installing npm dotenv & usi
 ## Frontend
 Change to client directory
 Install dependencies using npm i.
-run npm start. Frontend will open at http://localhost:3000/
+run npm start. Frontend will open at http://localhost:8000/
 
 
 # Features 
