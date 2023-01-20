@@ -3,9 +3,10 @@ import { signUp } from '../../utils/api';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function SignUp(props) {
+	const navigate = useNavigate();
 	const initialState = { username: '', password: '' };
 	const [formState, setFormState] = useState(initialState);
-	const navigate = useNavigate();
+	const [userError, setUserError] = useState('');
 
 	const handleChange = (event) => {
 		setFormState({ ...formState, [event.target.name]: event.target.value });
@@ -17,14 +18,21 @@ export default function SignUp(props) {
 			localStorage.token = data.token;
 			localStorage.user_id = data.user._id;
 			navigate('/login');
-		});
+		}).catch(function (error) { 
+			if (error.response) {
+				if (error.response.status === 401) {
+					setUserError('This username already exists! Please enter another. ')
+				}}});
 	}
 
 	return (
 		<div className='card-signup-form'>
 			<div className='card-body'>
 				<h1>Sign Up</h1>
-				<p>Already have an account?  <Link to={'/login'}> Login here!</Link></p>
+				<p>
+					Already have an account? <Link to={'/login'}> Login here!</Link>
+				</p>
+				<p style={{ color: 'red' }}>{userError}</p>
 				<form onSubmit={handleSubmit}>
 					<label htmlFor='username' className='form-label'>
 						<p>Username</p>

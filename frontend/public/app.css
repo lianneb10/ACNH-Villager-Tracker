@@ -30,9 +30,10 @@ nav a {
 
 .card-body {
     background-color: rgb(218, 225, 194);
-    width: 50vw;
+    max-width: 500px;
     border-radius: 2em;
-    margin: 0 auto;
+    margin: 18vh auto;
+    padding: 20px;
 }
 
 @media (max-width: 450px) {

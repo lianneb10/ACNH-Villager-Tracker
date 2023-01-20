@@ -8,7 +8,8 @@ export default function Login(props) {
 		username: '',
 		password: '',
 	});
-
+	const [userError, setUserError] = useState('');
+	
 	const handleChange = (event) => {
 		setFormState({ ...formState, [event.target.name]: event.target.value });
 	};
@@ -20,6 +21,15 @@ export default function Login(props) {
 			props.setLogInStatus(true);
 			navigate('/');
 			props.refresh();
+		}).catch(function (error) { 
+			if (error.response) {
+				if (error.response.status === 404) {
+					setUserError('You have put in the wrong username.')
+				}
+				else if (error.response.status === 401) {
+					setUserError('You have put in the wrong password.')
+				}
+			}
 		});
 	};
 
@@ -30,6 +40,7 @@ export default function Login(props) {
 				<p>
 					Don't have an account? <Link to={'/signup'}>  Sign up here!</Link>
 				</p>
+				<p style={{color: 'red'}}>{userError}</p>
 				<form onSubmit={handleSubmit}>
 					<label htmlFor='username' className='form-label'>
 						<p>Username:</p>

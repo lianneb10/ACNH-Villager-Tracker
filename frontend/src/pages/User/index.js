@@ -34,7 +34,8 @@ export default function User(props) {
 	};
 
 	return (
-		<div className='display-body'>
+		<div className='card-body'>
+			<h1>User Account</h1>
 			<h3>Username: {formState.username}</h3>
             <h3>Password: {formState.password}</h3>
 			<div className='delete'>

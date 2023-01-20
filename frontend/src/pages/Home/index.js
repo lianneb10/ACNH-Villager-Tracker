@@ -29,11 +29,12 @@ export default function Home(props) {
 
 			{props.isLoggedIn ? (
 				<div>
+					{ props.user.islands && props.user.islands.length === 0 ? (
 					<h3>
 						Thank you for logging in, please add an island or edit an existing
 						island below by clicking into it.
-					</h3>
-
+					</h3>): null}
+						<br />
 					<button className="btn" type="button"
 						id='create-island'
 						onClick={() => {
@@ -41,10 +42,13 @@ export default function Home(props) {
 						}}>
 						Create Island
 					</button>
+					<br />
+					<br /> 
 					{showForm ? (
 						<div className='create-form'>
 							<form>
-								<label htmlFor='name'>Island Name:</label>
+								<label htmlFor='name'>Island Name: </label>
+								<br />
 								<input
 									id='name'
 									type='text'
@@ -52,8 +56,9 @@ export default function Home(props) {
 									value={formState.name}
 								/>
 							</form>
+							<br />
 							<button className="btn" type='submit' onClick={handleSubmit}>
-								Add Island
+								Add {formState.name} Island
 							</button>
 						</div>
 					) : null}
