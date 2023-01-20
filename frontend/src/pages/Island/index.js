@@ -1,20 +1,20 @@
 // packages
 import { useEffect, useState} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { createVillager, deleteVillager, deleteIsland, updateIsland } from '../../utils/api';
+import { createVillager, deleteIsland, updateIsland } from '../../utils/api';
 import { Photos } from '../../components/Photo';
 import { Info } from '../../components/Info';
+import Delete from '../../components/Delete';
 import { options } from './options';
 import './island.css'
 
 export default function IslandShow(props) {
 	const navigate = useNavigate();
-	
     let {id} = useParams();
-	
+	// useState for villager add
 	const [showForm, setShowForm] = useState(false);
 	const [formState, setFormState] = useState({ name: '' , type: '' });
-	
+	// useState for island name edit
 	const [showIslandForm, setIslandForm] = useState(false);
 
 	const currentIsland = props.user.islands ? props.user.islands.find(
@@ -36,7 +36,6 @@ export default function IslandShow(props) {
 				.closest('optgroup').label,
 		});;
 	};
-
 	
 	const handleSubmit = async (event) => {
 		event.preventDefault();
@@ -61,33 +60,62 @@ export default function IslandShow(props) {
 		props.refresh();
 	};
 
+	//delete island 
+	const [deletePopUp, setDeletePopUp] = useState(false);
+
+
 
 	// render JSX
 	return (
 		<div className='main-container'>
 			{props.isLoggedIn && currentIsland ? (
 				<>
-					<h1> {showIslandForm ? islandNameState.name: currentIsland.name} Island</h1>
+					<h1 className='island-name'>
+						{showIslandForm ? islandNameState.name : currentIsland.name} Island
+					</h1>
+					{props.user.islands && currentIsland.villagers.length === 0 ? (
+						<h3 className='no-villager'>
+							Welcome to your island! You can edit your island's name using the "Edit Island Name" button. Use the "Add Villager" button to add a villager to your island.
+						</h3>
+					) : null}
 					<>
-					<div className='island-button-holder'>
-							<button
-								className='btn btn-danger'
-								type='button'
-								id='delete'
-								onClick={async (event) => {
-									if (
-										// eslint-disable-next-line no-restricted-globals
-										confirm('Are you sure you want to delete this island?')
-									) {
-										event.preventDefault();
-										await deleteIsland(currentIsland._id);
-										navigate('/');
-										props.refresh();
-									}
-								}}>
-								{' '}
-								Delete Island: {currentIsland.name}
-							</button>
+						<div className='island-button-holder'>
+							<div className='delete'>
+								{!deletePopUp ? (
+									<button
+										id='delete-btn'
+										className='btn btn-danger '
+										onClick={setDeletePopUp}>
+										Delete {currentIsland.name} Island
+									</button>
+								) : null}
+								{deletePopUp ? (
+									<div className='delete-prompt'>
+										<p>
+											Are you sure you wish to delete {currentIsland.name}{' '}
+											island?
+										</p>
+										<button
+											id='delete-btn'
+											className='btn btn-danger '
+											onClick={async () => {
+												await deleteIsland(currentIsland._id);
+												navigate('/');
+												props.refresh();
+											}}>
+											Yes
+										</button>
+										<button
+											id='edit-btn'
+											className='btn btn-danger '
+											onClick={() => {
+												setDeletePopUp(false);
+											}}>
+											No
+										</button>
+									</div>
+								) : null}
+							</div>
 
 							<button
 								className='btn'
@@ -98,27 +126,30 @@ export default function IslandShow(props) {
 								}}>
 								Edit Island Name
 							</button>
+						</div>
+
+						{showIslandForm ? (
+							<div className='edit-form'>
+								<form>
+									<label htmlFor='name'>Island Name:</label>
+									<input
+										id='name'
+										type='text'
+										onChange={handleIslandChange}
+										value={islandNameState.name}
+									/>
+								</form>
+								<button
+									className='btn'
+									type='submit'
+									onClick={handleIslandSubmit}>
+									Confirm Name
+								</button>
 							</div>
-							
-							{showIslandForm ? (
-								<div className='edit-form'>
-									<form>
-										<label htmlFor='name'>Island Name:</label>
-										<input
-											id='name'
-											type='text'
-											onChange={handleIslandChange}
-											value={islandNameState.name}
-										/>
-									</form>
-									<button className='btn' type='submit' onClick={handleIslandSubmit}>
-										Confirm Name
-									</button>
-								</div>
-							) : null}
-						</>
-					
-					<div>
+						) : null}
+					</>
+
+					<div className='add-villager'>
 						<button
 							className='btn'
 							type='button'
@@ -152,26 +183,7 @@ export default function IslandShow(props) {
 					<div className='villager-islandpagehold'>
 						{currentIsland.villagers.map((villager) => (
 							<div key={villager._id} className='solo-villager'>
-								<div className='delete-button'>
-									<button
-										className='btn btn-danger'
-										type='button'
-										id='delete'
-										onClick={async (event) => {
-											if (
-												// eslint-disable-next-line no-restricted-globals
-												confirm(
-													`Are you sure you want to delete this villager: ${villager.name}?`
-												)
-											) {
-												event.preventDefault();
-												await deleteVillager(villager._id);
-												props.refresh();
-											}
-										}}>
-										Delete {villager.name}
-									</button>
-								</div>
+								<Delete refresh={props.refresh} villager={villager} />
 
 								<Photos name={villager.name} />
 

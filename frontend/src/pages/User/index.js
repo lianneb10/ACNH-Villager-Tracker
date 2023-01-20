@@ -41,7 +41,7 @@ export default function User(props) {
 			<div className='delete'>
 				{!deletePopUp ? (
 					<button
-						id='edit-btn'
+						id='delete-btn'
 						className='btn btn-danger '
 						onClick={setDeletePopUp}>
 						Delete User

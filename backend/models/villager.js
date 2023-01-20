@@ -15,7 +15,8 @@ const villagerSchema = new mongoose.Schema({
 
 //react cascade deleting
     villagerSchema.post('findOneAndDelete', function(result) {
-   db.Island.updateOne({}, {$pull: {villagers: result._id}}).exec();})
+   db.Island.updateOne({}, {$pull: {villagers: result._id}}).exec();
+})
 
 const Villager = mongoose.model('Villager', villagerSchema);
 

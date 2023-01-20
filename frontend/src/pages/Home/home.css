@@ -6,10 +6,6 @@ body {
     text-align:center;
 }
 
-p{
-    display:flex;
-    flex-direction: row;
-}
 .villager-hold {
     display: flex;
     flex-direction: row;

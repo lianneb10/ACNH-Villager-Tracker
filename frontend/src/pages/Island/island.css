@@ -1,30 +1,38 @@
 
 /* top of island page */
+.island-name {
+    padding-bottom: -10px;
+}
 .island-button-holder {
-    display: flex;
-    flex-direction: row;
-    padding: 5px;
-    justify-content: center;
+    padding-bottom: 0px;
 }
 
 .island-button-holder button {
-    margin: 10px 5px;
+    margin: 2px;
 }
 
-.edit-form {
-    padding-bottom: 20px;
+.delete-prompt, .create-form, .edit-form {
+    margin: 0 20vw;
+    background-color: var(--offwhite);
+    border-radius: 2em;
+    margin: 10px 0px;
+    padding: 8px;
 }
 
+/* no villager prompt style */
+.no-villager {
+    padding: 20px; 
+}
 /* villager section of island page */
 .villager-islandpagehold {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.delete-button {
-    padding-bottom: 10px;
-}
 
+.delete-villager {
+    padding-bottom: 5px;
+}
 .solo-villager{
     padding: 10px;
     margin: 10px auto;

@@ -7,6 +7,9 @@
     --mediumblue: rgb(38, 112, 144);
 }
 
+body {
+    margin-bottom: 60px;
+}
 @font-face {
     font-family: Fink;
     src: url('FinkHeavy.otf');}
