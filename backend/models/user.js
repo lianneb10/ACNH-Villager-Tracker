@@ -14,9 +14,6 @@ const userSchema = new mongoose.Schema({
 	}]
 });
 
-  //ref: https://stackoverflow.com/questions/59207137/mongoose-pre-middleware-with-findbyidanddelete
-    // https://mongoosejs.com/docs/middleware.html#notes
-
     //react cascade deleting
     userSchema.post('findOneAndDelete', function(result) {
 		for (const islandId of result.islands) {

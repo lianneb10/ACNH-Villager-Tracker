@@ -7,6 +7,12 @@ body {
     text-align:center;
 }
 
+.tomNook {
+    max-width: 150px;
+    background-color: var(--offwhite);
+    border-radius: 2em;
+}
+
 .villager-hold {
     display: flex;
     flex-direction: row;

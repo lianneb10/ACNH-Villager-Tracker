@@ -31,9 +31,13 @@ export default function Home(props) {
 			{props.isLoggedIn ? (
 				<div>
 					{ props.user.islands && props.user.islands.length === 0 ? (
+					<>
+					<img src='tom.png' className='tomNook' alt='confused tom nook'></img>
 					<h3>
 						Thank you for logging in, please add an island!
-					</h3>): <h3>Click into an island below to edit its' name & add/delete villagers! </h3>}
+					</h3>
+					</>): 
+					<h3>Click into an island below to edit its' name & add/delete villagers! </h3>}
 
 						<br />
 					<button className="btn" type="button"
