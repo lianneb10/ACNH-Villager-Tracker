@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+// if we are in localhost, then the baseurl will be replace with the localhost and 8000, otherwise, use the routes as normal
+
 let baseURL = window.location.origin === 'http://localhost:3000' ? {baseURL: window.location.origin.replace(/:[0-9]+$/,"") + ":8000"} : {};
 
 
