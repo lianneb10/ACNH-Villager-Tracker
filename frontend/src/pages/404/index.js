@@ -7,7 +7,7 @@ export default function Page404() {
 			<div className='error'>
 				<h1>404 Error</h1>
 				<img className='tom' src='tom.png' alt='confused tom nook'></img>
-				<h4>Whoops! Your page does not exist on this site, maybe ask Tom?</h4>
+				<h4>Whoops! This page does not exist on the site, maybe ask Tom?</h4>
 				<Link className='home-link'  path to='/'>
 					Return to Home Page 
 				</Link>

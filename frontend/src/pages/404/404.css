@@ -4,7 +4,7 @@
     text-align: center;
     width: 80%;
     border-radius: 3em;
-    margin: 20vh auto;
+    margin: 10vh auto;
 }
 
 img.tom {
@@ -13,4 +13,5 @@ img.tom {
 
 .home-link {
     font-size: 3vh;
+    font-family: Fink;
 }
