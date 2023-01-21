@@ -34,7 +34,7 @@ export default function Home(props) {
 					<>
 					<img src='tom.png' className='tomNook' alt='confused tom nook'></img>
 					<h3>
-						Thank you for logging in, please add an island!
+						Tom Nook: "Thank you for logging in, please create an island!"
 					</h3>
 					</>): 
 					<h3>Click into an island below to edit its' name & add/delete villagers! </h3>}
