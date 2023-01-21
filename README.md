@@ -8,6 +8,7 @@ MERN full-stack app (Mongoose, Express, React, Node) app with a React frontend, 
   * [Setup](#setup)
   * [Features](#features)
   * [Inspiration](#inspiration)
+  * [References](#references)
   * [External API](#external-api)
   * [Contact](#contact)
 
@@ -54,10 +55,13 @@ run npm start. Frontend will open at http://localhost:8000/
 * React app created from the command prompt using Create React App.
 * Primer CSS framework for styling of the application.
 
-
 # Inspiration 
 * [AndrewJBateman](https://github.com/AndrewJBateman/pern-stack-todo) for README formatting
 * [Matt's Allo Backend](https://github.com/GonczarM/Allo-BackEnd) for structuring with three controllers/models
+
+# References
+* [Primer CSS Documentation](https://primer.style/css/)
+* Stackoverflow articles for debugging
 
 # External API
 * ACNH API: https://acnhapi.com/
