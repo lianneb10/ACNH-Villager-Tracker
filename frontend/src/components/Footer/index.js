@@ -1,5 +1,6 @@
 import './styles.css';
 
+
 export default function Footer() {
 	return (
 		<footer>
@@ -10,14 +11,21 @@ export default function Footer() {
 				rel='noreferrer'>
 				ACNH API
 			</a>
-				<a
-					className='link'
-					href='https://github.com/lianneb10'
-					target='_blank'
-					rel='noreferrer'>
-					Github
-				</a>
-                        <h6> Website created by Lianne Aratea</h6>
+			<a
+				className='link'
+				href='https://github.com/lianneb10'
+				target='_blank'
+				rel='noreferrer'>
+				Github
+			</a>
+			<a
+				className='link'
+				href='https://www.linkedin.com/in/liannearatea'
+				target='_blank'
+				rel='noreferrer'>
+				LinkedIn
+			</a>
+			<h6> Website created by Lianne Aratea</h6>
 		</footer>
 	);
 }
