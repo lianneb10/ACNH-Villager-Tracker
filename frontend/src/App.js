@@ -58,12 +58,18 @@ function App() {
 				<Route
 					path=''
 					element={
-						<Home isLoggedIn={isLoggedIn} user={user} refresh={refresh} />
+						<Home 
+							isLoggedIn={isLoggedIn} 
+							user={user} 
+							refresh={refresh} />
 					}
 				/>
 				<Route
 					path='/user-info'
-					element={<User user={user} setLogInStatus={setLogInStatus} refresh={refresh}/>}
+					element={<User 
+								user={user} 
+								setLogInStatus={setLogInStatus} 
+								refresh={refresh}/>}
 				/>
 				<Route
 					path='/login'
@@ -90,7 +96,10 @@ function App() {
 				<Route
 					path='/island/:id'
 					element={
-						<IslandShow user={user} isLoggedIn={isLoggedIn} refresh={refresh} />
+						<IslandShow 
+						user={user} 
+						isLoggedIn={isLoggedIn} 
+						refresh={refresh} />
 					}
 				/>
 				<Route 

@@ -39,10 +39,11 @@ export default function IslandShow(props) {
 	
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		await createVillager(formState, id);
-		setShowForm(false);
-		navigate(`/island/${id}`);
-        props.refresh();
+		if (formState.name !== '') {
+			await createVillager(formState, id);
+			setShowForm(false);
+			navigate(`/island/${id}`);
+			props.refresh();}
 	};
 
 	//island name changing
@@ -65,6 +66,7 @@ export default function IslandShow(props) {
 
 
 
+
 	// render JSX
 	return (
 		<div className='main-container'>
@@ -75,7 +77,9 @@ export default function IslandShow(props) {
 					</h1>
 					{props.user.islands && currentIsland.villagers.length === 0 ? (
 						<h3 className='no-villager'>
-							Welcome to your island! You can edit your island's name using the "Edit Island Name" button. Use the "Add Villager" button to add a villager to your island.
+							Welcome to your island! You can edit your island's name using the
+							"Edit Island Name" button. Use the "Add Villager" button to add a
+							villager to your island.
 						</h3>
 					) : null}
 					<>
@@ -173,7 +177,11 @@ export default function IslandShow(props) {
 									</select>
 								</form>
 
-								<button className='btn' type='submit' onClick={handleSubmit}>
+								<button
+									aria-disabled={formState.name === ''}
+									className='btn'
+									type='submit'
+									onClick={handleSubmit}>
 									Confirm Villager
 								</button>
 							</div>

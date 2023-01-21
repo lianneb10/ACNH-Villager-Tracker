@@ -34,7 +34,7 @@ export default function Home(props) {
 					<>
 					<img src='tom.png' className='tomNook' alt='confused tom nook'></img>
 					<h3>
-						Tom Nook: "Thank you for logging in, please create an island!"
+						"Thank you for logging in, please create an island!"
 					</h3>
 					</>): 
 					<h3>Click into an island below to edit its' name & add/delete villagers! </h3>}
@@ -73,7 +73,7 @@ export default function Home(props) {
 						{props.user.islands
 							? props.user.islands.map((island) => (
 								<>
-								<Link to={`/island/${island._id}`}>
+								<Link key='island link' to={`/island/${island._id}`}>
 									<div className='island-hold' key={island._id}>
 											<h2> {island.name} Island </h2>
 
