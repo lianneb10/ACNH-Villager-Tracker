@@ -4,6 +4,8 @@ MERN full-stack app (Mongoose, Express, React, Node) app with a React frontend, 
 ## 📄 Table of contents
 * ACNH Villager Tracker
   * [Screenshots](#screenshots)
+  * [User Stories](#user-stories)
+  * [Wireframe](#wireframe)
   * [Technologies](#technologies)
   * [Setup](#setup)
   * [Features](#features)
@@ -16,7 +18,14 @@ MERN full-stack app (Mongoose, Express, React, Node) app with a React frontend, 
 ![Screen Shot 2023-01-20 at 8 54 45 AM](https://user-images.githubusercontent.com/114965043/213757570-b76150c8-8875-4ba5-89a6-46b097e7c2af.png)
 ![Screen Shot 2023-01-20 at 8 55 18 AM](https://user-images.githubusercontent.com/114965043/213757580-cbde09a1-f080-4229-a72d-93779c60f04c.png)
 
+# User Stories
+* As someone that regularly plays ACNH, I want to be able to keep track of which villagers are currently at my island so that I know who I can interact with in-game.
+* As a new ACNH players, I want to be able to see all the different villagers in the game so that I can have a goal of who to have on my island when I build out my game.
+* As someone that has played the game many times over, I want to have a villager tracking system for myself so that I can see who lived on my previous islands.
 
+# Wireframe
+![7a1c273f-98c3-446e-8174-04058c53d279](https://user-images.githubusercontent.com/114965043/213909556-4b587540-ce7e-4da9-a33c-0b51c705910c.png)
+[Prototype of site](https://www.figma.com/proto/D8OKT3SsRD849DY1sPznhZ/ACNH-Villager-Tracker?node-id=0%3A1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A2)
 # Technologies
 ## Backend
 * Mongoose
