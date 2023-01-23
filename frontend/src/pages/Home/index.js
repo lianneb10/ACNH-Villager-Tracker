@@ -26,7 +26,7 @@ export default function Home(props) {
 	// render JSX
 	return (
 		<div className='main-container'>
-			<h1>Animal Crossing Villager Tracker</h1>
+			<h1>Animal Crossing New Horizons Villager Tracker</h1>
 
 			{props.isLoggedIn ? (
 				<div>
