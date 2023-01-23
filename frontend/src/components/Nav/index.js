@@ -1,5 +1,6 @@
 // packages
 import { Link } from 'react-router-dom';
+import './styles.css'
 
 
 export default function Nav(props) {
@@ -12,13 +13,16 @@ export default function Nav(props) {
 	return (
 		<nav className='Header'>
 			<div className='Header-item'>
-				<Link to='/'>Home</Link>
+				<Link className='nav-link' to='/'>
+					Home
+				</Link>
 			</div>
 
 			{props.isLoggedIn ? (
 				<>
 					<div className='Header-item'>
 						<Link
+							className='nav-link'
 							to='/'
 							onClick={() => {
 								props.setLogInStatus(false);
@@ -28,16 +32,22 @@ export default function Nav(props) {
 						</Link>
 					</div>
 					<div className='Header-item'>
-						<Link to='/user-info'>User Account</Link>
+						<Link to='/user-info' className='nav-link'>
+							User Account
+						</Link>
 					</div>
 				</>
 			) : (
 				<>
 					<div className='Header-item'>
-						<Link to='/signup'>Sign Up</Link>
+						<Link to='/signup' className='nav-link'>
+							Sign Up
+						</Link>
 					</div>
 					<div className='Header-item'>
-						<Link to='/login'>Login</Link>
+						<Link to='/login' className='nav-link'>
+							Login
+						</Link>
 					</div>
 				</>
 			)}
