@@ -30,17 +30,25 @@ export default function Home(props) {
 
 			{props.isLoggedIn ? (
 				<div>
-					{ props.user.islands && props.user.islands.length === 0 ? (
-					<>
-					<img src='tom.png' className='tomNook' alt='confused tom nook'></img>
-					<h3>
-						Thank you for logging in, please create an island!
-					</h3>
-					</>): 
-					<h3>Click into an island below to edit its' name & add/delete villagers! </h3>}
+					{props.user.islands && props.user.islands.length === 0 ? (
+						<>
+							<img
+								src='tom.png'
+								className='tomNook'
+								alt='confused tom nook'></img>
+							<h3>Thank you for logging in, please create an island!</h3>
+						</>
+					) : (
+						<h3>
+							Click into an island below to edit its' name & add/delete
+							villagers!{' '}
+						</h3>
+					)}
 
-						<br />
-					<button className="btn" type="button"
+					<br />
+					<button
+						className='btn'
+						type='button'
 						id='create-island'
 						onClick={() => {
 							setShowForm(!showForm);
@@ -48,7 +56,7 @@ export default function Home(props) {
 						Create Island
 					</button>
 					<br />
-					<br /> 
+					<br />
 					{showForm ? (
 						<div className='create-form'>
 							<form>
@@ -62,41 +70,46 @@ export default function Home(props) {
 								/>
 							</form>
 							<br />
-							<button className="btn" type='submit' onClick={handleSubmit}>
+							<button className='btn' type='submit' onClick={handleSubmit}>
 								Add {formState.name} Island
 							</button>
 						</div>
 					) : null}
 
-
 					<div className='islandsHolder'>
 						{props.user.islands
 							? props.user.islands.map((island) => (
-								<>
-								<Link key='island link' to={`/island/${island._id}`}>
-									<div className='island-hold' key={island._id}>
-											<h2> {island.name} Island </h2>
+									<>
+										<Link key='island link' to={`/island/${island._id}`}>
+											<div className='island-hold' key={island._id}>
+												<h2> {island.name} Island </h2>
 
-										<div className='villager-hold'>
-										{island.villagers.map((villager) => (
-											<div className='home-villager'>
-											<p key={villager._id}>
-												
-												 <Icons name={villager.name} />
-											</p>
+												<div className='villager-hold'>
+													{island.villagers.map((villager) => (
+														<div className='home-villager'>
+															<p key={villager._id}>
+																<Icons name={villager.name} />
+															</p>
+														</div>
+													))}
+												</div>
 											</div>
-										))}
-										</div>
-										
-									</div>
-								</Link>
+										</Link>
 									</>
 							  ))
 							: null}
 					</div>
 				</div>
 			) : (
-				<h3>Please sign up or log in to access the website features.</h3>
+				<div className='card-body'>
+					<h3>Welcome to ACNH Villager Tracker! </h3>
+					<p>
+						ACNH enthusiast? New to the game? Use this site to see details about
+						villagers and even add them to your island! Please{' '}
+						<Link to='/signup'>sign up</Link> or <Link to='/login'>log in</Link> to access the website
+						features.
+					</p>
+				</div>
 			)}
 		</div>
 	);

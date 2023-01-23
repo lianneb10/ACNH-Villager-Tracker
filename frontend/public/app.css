@@ -42,8 +42,8 @@ nav a {
     background-color: var(--offwhite);
     max-width: 500px;
     border-radius: 2em;
-    margin: 18vh auto;
-    padding: 20px;
+    margin: 15vh auto;
+    padding: 10px;
 }
 
 @media (max-width: 450px) {
