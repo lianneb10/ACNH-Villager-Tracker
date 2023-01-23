@@ -12,6 +12,7 @@ export default function Nav(props) {
 	// render JSX
 	return (
 		<nav className='Header'>
+			<div className='nav-holder'>
 			<div className='Header-item'>
 				<Link className='nav-link' to='/'>
 					Home
@@ -51,6 +52,7 @@ export default function Nav(props) {
 					</div>
 				</>
 			)}
+		</div>
 		</nav>
 	);
 }
