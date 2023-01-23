@@ -3,6 +3,28 @@ body {
     background-color: var(--green);
     padding-bottom: 80px;
 }
+
+.home-card {
+    background-color: var(--offwhite);
+    max-width: 800px;
+    border-radius: 2em;
+    margin: 13vh auto;
+    padding: 10px;
+}
+
+.home-card h3 {
+    font-size: xx-large;
+}
+.home-card p {
+    font-size: x-large;
+}
+
+@media (max-width: 450px) {
+.home-card {
+    font-size: large;
+} 
+}
+
 .main-container{
     text-align:center;
 }

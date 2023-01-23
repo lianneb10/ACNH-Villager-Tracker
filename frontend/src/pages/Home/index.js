@@ -101,7 +101,7 @@ export default function Home(props) {
 					</div>
 				</div>
 			) : (
-				<div className='card-body'>
+				<div className='home-card'>
 					<h3>Welcome to ACNH Villager Tracker! </h3>
 					<p>
 						ACNH enthusiast? New to the game? Use this site to see details about
