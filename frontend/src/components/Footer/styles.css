@@ -17,11 +17,6 @@ footer a {
     font-family: Fink;
 }
 
-footer:hover {
-	background-color: black;
-	color: white;
-}
-
 footer .link {
 	color: (255, 255, 255, 0.3);
 	text-decoration: none;
